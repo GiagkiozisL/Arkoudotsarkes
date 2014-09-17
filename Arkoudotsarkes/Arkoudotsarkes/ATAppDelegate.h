@@ -1,15 +1,12 @@
-//
-//  ATAppDelegate.h
-//  Arkoudotsarkes
-//
-//  Created by Giagkiozis Louloudis on 9/10/14.
-//  Copyright (c) 2014 FlowerApps. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
+#import "ViewControllerA.h"
+#import "ViewControllerB.h"
+#import "ATMainViewController.h"
 
 @interface ATAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) ATMainViewController *tabBarController;
 
 @end

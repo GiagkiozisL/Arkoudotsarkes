@@ -1,18 +1,37 @@
-//
-//  ATAppDelegate.m
-//  Arkoudotsarkes
-//
-//  Created by Giagkiozis Louloudis on 9/10/14.
-//  Copyright (c) 2014 FlowerApps. All rights reserved.
-//
 
 #import "ATAppDelegate.h"
+#import <ParseFacebookUtils/PFFacebookUtils.h>
+#import <Parse/Parse.h>
 
 @implementation ATAppDelegate
+@synthesize tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    [Parse setApplicationId:@"saX5aAVwfdw4FqKOA3gnEhpxiHTNnG9yLRMsIDkS"
+                  clientKey:@"WNY0sK9Zq6LqnPPNVJ7qYG6bjNiWD1S0CCP6lmT7"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    // Register for push notifications
+    [application registerForRemoteNotificationTypes:
+     UIRemoteNotificationTypeBadge |
+     UIRemoteNotificationTypeAlert |
+     UIRemoteNotificationTypeSound];
+    [PFFacebookUtils initializeFacebook];
+    
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]
+//                                                   bounds]];
+//    // Override point for customization after application launch.
+//    UIViewController *viewController1 = [[ViewControllerA alloc]
+//                                         initWithNibName:@"ViewControllerA" bundle:nil];
+//    UIViewController *viewController2 = [[ViewControllerB alloc]
+//                                         initWithNibName:@"ViewControllerB" bundle:nil];
+//    self.tabBarController = [[ATMainViewController alloc] init];
+//    self.tabBarController.viewControllers = @[viewController1,
+//                                              viewController2];
+//    self.window.rootViewController = self.tabBarController;
+//    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							
@@ -33,9 +52,17 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [FBAppCall handleOpenURL:url
+                  sourceApplication:sourceApplication
+                        withSession:[PFFacebookUtils session]];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
