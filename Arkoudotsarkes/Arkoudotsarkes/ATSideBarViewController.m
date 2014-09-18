@@ -105,7 +105,7 @@ NSData *imageData;
     
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.opaque = NO;
-    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundDesert2.png"]];
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backGroundDesert2.png"]];
     
     menuItems = @[@"title", @"news", @"comments", @"map", @"calendar", @"wishlist", @"bookmark", @"tag"];
 }

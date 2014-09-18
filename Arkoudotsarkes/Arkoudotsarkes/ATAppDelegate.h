@@ -1,6 +1,6 @@
 
 #import <UIKit/UIKit.h>
-#import "ViewControllerA.h"
+#import "GenerateImageController.h"
 #import "ViewControllerB.h"
 #import "ATMainViewController.h"
 
