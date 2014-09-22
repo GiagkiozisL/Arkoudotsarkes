@@ -65,8 +65,6 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     } else {
         NSLog(@"unavailable!");
     }
-
-    
 }
 -(void)twitterPost {
 
@@ -83,6 +81,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
         NSLog(@"unavailable!");
     }
 }
+
 -(void)databasePost {
 
     PFObject *newObject = [PFObject objectWithClassName:@"Event"];

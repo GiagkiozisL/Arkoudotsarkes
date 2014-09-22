@@ -15,6 +15,7 @@
 @synthesize nextBarBtn;
 @synthesize cancelBarBtn;
 @synthesize toolBar;
+@synthesize mainView;
 
 NSString *temp;
 
@@ -30,23 +31,19 @@ NSString *temp;
     
     [nextBarBtn setAction:@selector(proceedImage)];
     [nextBarBtn setTarget:self];
-    
     [cancelBarBtn setAction:@selector(cancelImage)];
     [cancelBarBtn setTarget:self];
     [toolBar setBackgroundColor:[UIColor blackColor]];
     
-    
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Change button color
     sideBarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
     sideBarButton.target = self.revealViewController;
     sideBarButton.action = @selector(revealToggle:);
-  //  [self segmentChangedValue:self];
-    //    // Set the gesture
+    // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 

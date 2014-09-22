@@ -2,6 +2,7 @@
 #import "ATAppDelegate.h"
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <Parse/Parse.h>
+#import "TestFlight+AsyncLogging.h"
 
 @implementation ATAppDelegate
 @synthesize tabBarController;
@@ -19,18 +20,7 @@
      UIRemoteNotificationTypeSound];
     [PFFacebookUtils initializeFacebook];
     
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]
-//                                                   bounds]];
-//    // Override point for customization after application launch.
-//    UIViewController *viewController1 = [[ViewControllerA alloc]
-//                                         initWithNibName:@"ViewControllerA" bundle:nil];
-//    UIViewController *viewController2 = [[ViewControllerB alloc]
-//                                         initWithNibName:@"ViewControllerB" bundle:nil];
-//    self.tabBarController = [[ATMainViewController alloc] init];
-//    self.tabBarController.viewControllers = @[viewController1,
-//                                              viewController2];
-//    self.window.rootViewController = self.tabBarController;
-//    [self.window makeKeyAndVisible];
+    [TestFlight takeOff:@"0cd2bf03-0d48-4ba3-8166-616d94fec3e3"];
     
     return YES;
 }
