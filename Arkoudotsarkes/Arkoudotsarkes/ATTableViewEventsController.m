@@ -1,6 +1,7 @@
 
 #import "ATTableViewEventsController.h"
 #import "ATViewEventCell.h"
+#import "SWRevealViewController.h"
 
 @interface ATTableViewEventsController ()
 
@@ -8,6 +9,7 @@
 
 @implementation ATTableViewEventsController
 ATViewEventCell *tableViewCell;
+@synthesize sideBarButton;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -25,8 +27,12 @@ ATViewEventCell *tableViewCell;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    sideBarButton.target = self.revealViewController;
+    sideBarButton.action = @selector(revealToggle:);
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,11 +1,14 @@
 
 #import "ATTabBarViewController.h"
+#import "SWRevealViewController.h"
 
 @interface ATTabBarViewController ()
 
 @end
 
 @implementation ATTabBarViewController
+
+@synthesize tabBarItem;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -18,13 +21,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.tabBar.selectedItem.tag = 1;
+    self.navigationItem.title = @"News Feed";
+    tabBarItem = [[UITabBar alloc]init];
+    self.delegate = self;
+   
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"menu.png"] style:UIBarButtonItemStylePlain target:self.revealViewController action:@selector(revealToggle:)];
+//    [(UITabBarController *)self.navigationController.topViewController setSelectedIndex:1];
+     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+ 
+    if (tabBarController.selectedIndex ==0) {
+        self.navigationItem.title = @"News Feed";
+    } else if (tabBarController.selectedIndex == 1) {
+        self.navigationItem.title = @"Camera";
+    }
 }
 
 @end

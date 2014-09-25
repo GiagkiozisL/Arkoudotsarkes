@@ -20,7 +20,7 @@
      UIRemoteNotificationTypeSound];
     [PFFacebookUtils initializeFacebook];
     
-    [TestFlight takeOff:@"0cd2bf03-0d48-4ba3-8166-616d94fec3e3"];
+    [TestFlight takeOff:@"8c1a44ce-70b8-46db-a106-5453ccab9863"];
     
     return YES;
 }

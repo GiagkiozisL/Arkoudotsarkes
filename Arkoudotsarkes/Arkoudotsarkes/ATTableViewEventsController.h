@@ -4,4 +4,6 @@
 
 @interface ATTableViewEventsController : PFQueryTableViewController
 
+@property (weak, nonatomic) UIBarButtonItem *sideBarButton;
+
 @end
