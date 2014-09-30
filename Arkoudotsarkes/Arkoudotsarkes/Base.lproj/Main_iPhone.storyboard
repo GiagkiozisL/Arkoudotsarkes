@@ -931,7 +931,7 @@
                 <tabBarController definesPresentationContext="YES" id="XWp-4S-9JG" customClass="ATTabBarViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="zIS-Sc-mSK"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="wKx-sk-pFN">
+                    <tabBar key="tabBar" contentMode="scaleToFill" backgroundImage="tabBar.png" selectionIndicatorImage="halfBar.png" id="wKx-sk-pFN">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1048,13 +1048,32 @@
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="settingsSegue" id="JSg-5A-vmm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackSettings.png" id="CSx-FK-o5G">
+                                <rect key="frame" x="0.0" y="62" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sQW-rP-0Tc">
+                                <rect key="frame" x="-5" y="14" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="engineStarted.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopEngine:" destination="GEk-DT-hBJ" eventType="touchUpInside" id="cid-9H-B3c"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="s2g-PA-bxA"/>
+                    <connections>
+                        <outlet property="stopEngineBtn" destination="sQW-rP-0Tc" id="xIP-hb-goS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfz-0a-9Iq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1199" y="-2751"/>
+            <point key="canvasLocation" x="-1199" y="-2749"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wui-og-gSA">
@@ -1072,6 +1091,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BackSettings.png" width="320" height="568"/>
         <image name="UIBarButtonCamera.png" width="28" height="22"/>
         <image name="addPic.png" width="60" height="60"/>
         <image name="backExFinal2.png" width="320" height="568"/>
@@ -1079,12 +1099,15 @@
         <image name="calendar.png" width="1024" height="1024"/>
         <image name="compass.png" width="45" height="45"/>
         <image name="contactIcon.png" width="60" height="60"/>
+        <image name="engineStarted.png" width="120" height="120"/>
         <image name="facebook-icon2.png" width="408" height="405"/>
         <image name="fb_oval.png" width="50" height="50"/>
+        <image name="halfBar.png" width="160" height="49"/>
         <image name="logIn.png" width="38" height="38"/>
         <image name="menu.png" width="28" height="20"/>
         <image name="news.png" width="1024" height="1024"/>
         <image name="startEngineButton.png" width="170" height="50"/>
+        <image name="tabBar.png" width="320" height="49"/>
         <image name="tag.png" width="1024" height="1024"/>
         <image name="team.png" width="34" height="34"/>
     </resources>
@@ -1094,7 +1117,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="VYA-Zc-yNK"/>
         <segue reference="y4y-9T-ipt"/>
+        <segue reference="hAV-8I-RhM"/>
     </inferredMetricsTieBreakers>
 </document>

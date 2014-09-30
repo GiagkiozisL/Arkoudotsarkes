@@ -19,10 +19,6 @@ ATViewEventCell *tableViewCell;
     return self;
 }
 
--(void)viewWillAppear:(BOOL)animated {
-    
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -75,7 +71,6 @@ ATViewEventCell *tableViewCell;
     
     return 320;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object{
     

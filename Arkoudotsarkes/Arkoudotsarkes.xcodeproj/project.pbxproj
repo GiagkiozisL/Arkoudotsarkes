@@ -106,6 +106,13 @@
 		4572D1F719BFB241004165F4 /* ArkoudotsarkesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4572D1F619BFB241004165F4 /* ArkoudotsarkesTests.m */; };
 		4572D20319BFB9AE004165F4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4572D20219BFB9AE004165F4 /* SWRevealViewController.m */; };
 		4574B05819C382F10070D755 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 4574B05719C382F10070D755 /* compass.png */; };
+		4576533519DA91D50044A887 /* tabBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4576533319DA91D50044A887 /* tabBar.png */; };
+		4576533619DA91D50044A887 /* tabBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4576533419DA91D50044A887 /* tabBar@2x.png */; };
+		4576533919DA93A20044A887 /* halfBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4576533719DA93A20044A887 /* halfBar.png */; };
+		4576533A19DA93A20044A887 /* halfBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4576533819DA93A20044A887 /* halfBar@2x.png */; };
+		4576533D19DA97AF0044A887 /* engineStarted.png in Resources */ = {isa = PBXBuildFile; fileRef = 4576533B19DA97AE0044A887 /* engineStarted.png */; };
+		4576533E19DA97AF0044A887 /* engineStopped.png in Resources */ = {isa = PBXBuildFile; fileRef = 4576533C19DA97AF0044A887 /* engineStopped.png */; };
+		4576534019DA99E20044A887 /* BackSettings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4576533F19DA99E20044A887 /* BackSettings.png */; };
 		4582DB8D19C2DDD500268017 /* appIcon60.png in Resources */ = {isa = PBXBuildFile; fileRef = 4582DB8C19C2DDD500268017 /* appIcon60.png */; };
 		4582DB8F19C2DE3400268017 /* appIcon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 4582DB8E19C2DE3400268017 /* appIcon120.png */; };
 		4582DB9319C2DF5000268017 /* appIcon152.png in Resources */ = {isa = PBXBuildFile; fileRef = 4582DB9019C2DF5000268017 /* appIcon152.png */; };
@@ -262,6 +269,13 @@
 		4572D20119BFB9AE004165F4 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		4572D20219BFB9AE004165F4 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		4574B05719C382F10070D755 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
+		4576533319DA91D50044A887 /* tabBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBar.png; sourceTree = "<group>"; };
+		4576533419DA91D50044A887 /* tabBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar@2x.png"; sourceTree = "<group>"; };
+		4576533719DA93A20044A887 /* halfBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = halfBar.png; sourceTree = "<group>"; };
+		4576533819DA93A20044A887 /* halfBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "halfBar@2x.png"; sourceTree = "<group>"; };
+		4576533B19DA97AE0044A887 /* engineStarted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = engineStarted.png; sourceTree = "<group>"; };
+		4576533C19DA97AF0044A887 /* engineStopped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = engineStopped.png; sourceTree = "<group>"; };
+		4576533F19DA99E20044A887 /* BackSettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackSettings.png; sourceTree = "<group>"; };
 		4582DB8C19C2DDD500268017 /* appIcon60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon60.png; sourceTree = "<group>"; };
 		4582DB8E19C2DE3400268017 /* appIcon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon120.png; sourceTree = "<group>"; };
 		4582DB9019C2DF5000268017 /* appIcon152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon152.png; sourceTree = "<group>"; };
@@ -347,6 +361,13 @@
 		4523E1A719C03B0F0056A548 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4576533F19DA99E20044A887 /* BackSettings.png */,
+				4576533B19DA97AE0044A887 /* engineStarted.png */,
+				4576533C19DA97AF0044A887 /* engineStopped.png */,
+				4576533719DA93A20044A887 /* halfBar.png */,
+				4576533819DA93A20044A887 /* halfBar@2x.png */,
+				4576533319DA91D50044A887 /* tabBar.png */,
+				4576533419DA91D50044A887 /* tabBar@2x.png */,
 				454DA92E19D95D81002FE2A7 /* Default-Landscape.png */,
 				454DA92F19D95D81002FE2A7 /* Default-Landscape@2x.png */,
 				454DA93019D95D81002FE2A7 /* Default-Portrait.png */,
@@ -670,6 +691,7 @@
 				45462C5819CB722100F76198 /* exampleGif2.gif in Resources */,
 				456B4D9F19C0B52800B8E5FB /* startEngineButton.png in Resources */,
 				4517A39519CB03C0002BEB36 /* facebook.png in Resources */,
+				4576533A19DA93A20044A887 /* halfBar@2x.png in Resources */,
 				456B4D9B19C09F1500B8E5FB /* fb_oval.png in Resources */,
 				4523E18E19C033FF0056A548 /* calendar_photo.jpg in Resources */,
 				4523E1BF19C03B1B0056A548 /* nav_bg.png in Resources */,
@@ -691,18 +713,21 @@
 				45462C4F19CB434300F76198 /* ATViewEventCell.xib in Resources */,
 				458FB95719C9B61300E50BB3 /* UIBarButtonCamera_2x.png in Resources */,
 				4523E1C119C03B1B0056A548 /* calendar.png in Resources */,
+				4576533D19DA97AF0044A887 /* engineStarted.png in Resources */,
 				4523E1C319C03B1B0056A548 /* map.png in Resources */,
 				45462C5619CB701100F76198 /* exampleGif2.png in Resources */,
 				4523E19019C033FF0056A548 /* comments_photo.jpg in Resources */,
 				4523E1CC19C050CE0056A548 /* logIn.png in Resources */,
 				4582DB9419C2DF5000268017 /* appIcon80.png in Resources */,
 				458FB95119C984B400E50BB3 /* backGroundDesert.png in Resources */,
+				4576533519DA91D50044A887 /* tabBar.png in Resources */,
 				454DA93719D95D81002FE2A7 /* Default@2x.png in Resources */,
 				45A91CEB19C8C9BC00012A3E /* facebook-icon2.png in Resources */,
 				4513807819D9550A009F5108 /* Default-568h@2x.png in Resources */,
 				4523E19519C033FF0056A548 /* news.png in Resources */,
 				4513807D19D9550A009F5108 /* Default.png in Resources */,
 				4523E1BC19C03B1B0056A548 /* wishlist_photo.jpg in Resources */,
+				4576534019DA99E20044A887 /* BackSettings.png in Resources */,
 				4523E18F19C033FF0056A548 /* calendar.png in Resources */,
 				4523E19819C033FF0056A548 /* tag.png in Resources */,
 				4523E1BA19C03B1B0056A548 /* tag_photo.jpg in Resources */,
@@ -713,6 +738,7 @@
 				4523E1BE19C03B1B0056A548 /* menu@2x.png in Resources */,
 				4572D1DF19BFB241004165F4 /* Main_iPad.storyboard in Resources */,
 				4523E1C719C03B1B0056A548 /* wishlist.png in Resources */,
+				4576533919DA93A20044A887 /* halfBar.png in Resources */,
 				4519CB7419C1D5FC002007C7 /* team.png in Resources */,
 				4519CB8519C21460002007C7 /* addPicTrans.png in Resources */,
 				4523E1B919C03B1B0056A548 /* bookmark_photo.jpg in Resources */,
@@ -736,6 +762,7 @@
 				4523E18D19C033FF0056A548 /* bookmark.png in Resources */,
 				4574B05819C382F10070D755 /* compass.png in Resources */,
 				4572D1DC19BFB241004165F4 /* Main_iPhone.storyboard in Resources */,
+				4576533619DA91D50044A887 /* tabBar@2x.png in Resources */,
 				452EB8E619C181CB00203DAB /* settings.png in Resources */,
 				4519CB7919C1E89E002007C7 /* backBtn.png in Resources */,
 				4572D1D319BFB241004165F4 /* InfoPlist.strings in Resources */,
@@ -743,6 +770,7 @@
 				458FB94D19C977C700E50BB3 /* contactIcon.png in Resources */,
 				458FB94F19C9819500E50BB3 /* offroad-enduro.png in Resources */,
 				45462C5419CB6F0B00F76198 /* exampleGif.png in Resources */,
+				4576533E19DA97AF0044A887 /* engineStopped.png in Resources */,
 				454DA93419D95D81002FE2A7 /* Default-Landscape@2x.png in Resources */,
 				458FB95919C9B6D200E50BB3 /* UIBarButtonCamera.png in Resources */,
 			);

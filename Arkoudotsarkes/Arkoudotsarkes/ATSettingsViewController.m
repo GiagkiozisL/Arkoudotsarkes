@@ -1,12 +1,14 @@
 
 #import "ATSettingsViewController.h"
 #import <Parse/Parse.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 @interface ATSettingsViewController ()
 
 @end
 
 @implementation ATSettingsViewController
+@synthesize stopEngineBtn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -15,6 +17,17 @@
         // Custom initialization
     }
     return self;
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    if ([PFUser currentUser] && // Check if user is cached
+        [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])
+    {
+         [stopEngineBtn setImage:[UIImage imageNamed:@"engineStarted.png"] forState:UIControlStateNormal];
+    } else
+         [stopEngineBtn setImage:[UIImage imageNamed:@"engineStopped.png"] forState:UIControlStateNormal];
+    
 }
 
 - (void)viewDidLoad {
@@ -52,5 +65,11 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - IBAction
+
+- (IBAction)stopEngine:(id)sender {
+    [PFUser logOut];
+    [stopEngineBtn setImage:[UIImage imageNamed:@"engineStopped.png"] forState:UIControlStateNormal];
+}
 
 @end
