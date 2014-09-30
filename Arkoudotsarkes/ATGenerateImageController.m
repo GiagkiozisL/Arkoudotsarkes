@@ -28,9 +28,8 @@ NSString *temp;
     return self;
 }
 
--(void)viewWillAppear:(BOOL)animated{
+-(void)viewWillAppear:(BOOL)animated {
     
-    NSLog(@"viewwillapear tag 1:%ld , title:%@",(long)self.tabBarItem.tag,self.tabBarItem.title);
     [nextBarBtn setAction:@selector(proceedImage)];
     [nextBarBtn setTarget:self];
     [cancelBarBtn setAction:@selector(cancelImage)];
@@ -40,8 +39,10 @@ NSString *temp;
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     // Change button color
+    NSLog(@"kai erxomai edv?");
     sideBarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
     sideBarButton.target = self.revealViewController;
     sideBarButton.action = @selector(revealToggle:);
@@ -49,8 +50,7 @@ NSString *temp;
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -64,6 +64,7 @@ NSString *temp;
     segmentControl.hidden = NO;
     toolBar.hidden = YES;
 }
+
 - (IBAction)segmentChangedValue:(id)sender {
     
     UIImagePickerController *mediaUI = [[UIImagePickerController alloc] init];

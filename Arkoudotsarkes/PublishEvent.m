@@ -118,7 +118,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     [super viewWillDisappear:animated];
     NSLog(@"vgainw");
     ATGenerateImageController *generatedImage = [[ATGenerateImageController alloc]init];
-    //>?????????????????????????????
+    
     // unregister for keyboard notifications
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
     

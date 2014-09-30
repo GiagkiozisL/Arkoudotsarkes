@@ -10,6 +10,7 @@
 @implementation ATTabBarViewController
 
 @synthesize tabBarItem;
+ATNewsFeedController *newscontrol;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,8 +29,9 @@
     [super viewDidLoad];
     self.navigationItem.title = @"News Feed";
     self.delegate = self;
-   
+    newscontrol = [[ATNewsFeedController alloc]init];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"menu.png"] style:UIBarButtonItemStylePlain target:self.revealViewController action:@selector(revealToggle:)];
+
      [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
