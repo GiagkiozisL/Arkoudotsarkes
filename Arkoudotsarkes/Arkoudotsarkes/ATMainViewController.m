@@ -1,7 +1,7 @@
 
 #import "ATMainViewController.h"
 #import "SWRevealViewController.h"
-#import "GenerateImageController.h"
+#import "ATGenerateImageController.h"
 #import "ViewControllerB.h"
 
 @interface ATMainViewController ()

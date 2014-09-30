@@ -2,7 +2,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface ATTableViewEventsController : PFQueryTableViewController
+@interface ATNewsFeedController : PFQueryTableViewController
 
 @property (weak, nonatomic) UIBarButtonItem *sideBarButton;
 

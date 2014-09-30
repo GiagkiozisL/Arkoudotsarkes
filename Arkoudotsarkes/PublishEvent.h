@@ -2,7 +2,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface PublishEvent : UIViewController <UITextFieldDelegate,UIScrollViewDelegate>
+@interface PublishEvent : UIViewController <UITextFieldDelegate,UIScrollViewDelegate,UINavigationControllerDelegate>
 {
     CGFloat animatedDistance;
 }

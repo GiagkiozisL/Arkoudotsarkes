@@ -1,7 +1,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GenerateImageController : UIViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface ATGenerateImageController : UIViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (weak, nonatomic) UIBarButtonItem *sideBarButton;
 

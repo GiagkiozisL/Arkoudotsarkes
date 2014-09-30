@@ -1,14 +1,14 @@
 
-#import "GenerateImageController.h"
+#import "ATGenerateImageController.h"
 #import "SWRevealViewController.h"
 #import "PublishEvent.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
-@interface GenerateImageController ()
+@interface ATGenerateImageController ()
 
 @end
 
-@implementation GenerateImageController
+@implementation ATGenerateImageController
 @synthesize sideBarButton;
 @synthesize segmentControl;
 @synthesize imageView;
@@ -19,16 +19,18 @@
 
 NSString *temp;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
     if (self) {
-        // Custom initialization
+        self.title = @"Camera";
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Camera2" image:[UIImage imageNamed:@"UIBarButtonCamera.png"] tag:2];
     }
     return self;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     
+    NSLog(@"viewwillapear tag 1:%ld , title:%@",(long)self.tabBarItem.tag,self.tabBarItem.title);
     [nextBarBtn setAction:@selector(proceedImage)];
     [nextBarBtn setTarget:self];
     [cancelBarBtn setAction:@selector(cancelImage)];

@@ -1,6 +1,7 @@
 
 #import "ATTabBarViewController.h"
 #import "SWRevealViewController.h"
+#import "ATNewsFeedController.h"
 
 @interface ATTabBarViewController ()
 
@@ -19,14 +20,16 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"News Feed";
-    tabBarItem = [[UITabBar alloc]init];
     self.delegate = self;
    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"menu.png"] style:UIBarButtonItemStylePlain target:self.revealViewController action:@selector(revealToggle:)];
-//    [(UITabBarController *)self.navigationController.topViewController setSelectedIndex:1];
      [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 

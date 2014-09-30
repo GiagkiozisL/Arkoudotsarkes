@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="l6k-8x-wOm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="l6k-8x-wOm">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Photo View Controller-->
@@ -31,7 +31,7 @@
             </objects>
             <point key="canvasLocation" x="-2047" y="-415"/>
         </scene>
-        <!--Team Table View Controller - Root View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="1bi-Ck-UfP">
             <objects>
                 <tableViewController id="mOS-3b-ra4" customClass="ATTeamTableViewController" sceneMemberID="viewController">
@@ -62,7 +62,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ll-M5-Ssy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2756" y="377"/>
+            <point key="canvasLocation" x="-2540" y="305"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EyJ-nR-hTu">
@@ -280,7 +280,7 @@
             </objects>
             <point key="canvasLocation" x="-2064" y="-1159"/>
         </scene>
-        <!--View Controller - Main View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="D6N-ly-Wdg">
             <objects>
                 <viewController title="Main View Controller" id="taT-Zj-Gpp" sceneMemberID="viewController">
@@ -327,28 +327,28 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="username" minimumFontSize="17" id="VLa-kX-hrG">
-                                <rect key="frame" x="20" y="137" width="280" height="45"/>
+                                <rect key="frame" x="20" y="139" width="280" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="light" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="password" minimumFontSize="17" id="xfx-oF-EzX">
                                 <rect key="frame" x="20" y="192" width="280" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="go" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iB1-Ho-RD3">
-                                <rect key="frame" x="149" y="264" width="32" height="26"/>
+                                <rect key="frame" x="146" y="264" width="32" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="TeluguSangamMN" family="Telugu Sangam MN" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wr4-ef-EcA">
                                 <rect key="frame" x="75" y="375" width="172" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <state key="normal" title="Start Engine!" backgroundImage="startEngineButton.png">
                                     <color key="titleColor" red="0.055086096938775531" green="0.055086096938775531" blue="0.055086096938775531" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -366,16 +366,28 @@
                                     <action selector="facebookLogIn:" destination="uii-9Z-tNW" eventType="touchUpInside" id="4Ps-Oe-3IH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="log in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NGk-Tw-UQG">
-                                <rect key="frame" x="65" y="306" width="60" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="TeluguSangamMN" family="Telugu Sangam MN" pointSize="19"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="zg4-Fi-epH">
                                 <rect key="frame" x="150" y="236" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="log in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NGk-Tw-UQG">
+                                <rect key="frame" x="67" y="305" width="60" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iEs-HQ-qPe">
+                                <rect key="frame" x="25" y="449" width="275" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                <state key="normal" title="I dont have facebook account yet">
+                                    <color key="titleColor" red="0.81176477670000002" green="0.12549020350000001" blue="0.13333334029999999" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0G1-J7-o35" kind="modal" modalTransitionStyle="crossDissolve" id="xRg-l1-Mwj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.79210047250000004" blue="0.40912354499999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -394,7 +406,88 @@
             </objects>
             <point key="canvasLocation" x="-2059" y="-1978"/>
         </scene>
-        <!--Side Bar View Controller - Sidebar-->
+        <!--Sign Up Controller-->
+        <scene sceneID="1NI-pa-iyx">
+            <objects>
+                <viewController id="psX-Ua-XFn" customClass="ATSignUpController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i8x-xg-0PT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="username" minimumFontSize="17" id="pOE-Gn-uQl">
+                                <rect key="frame" x="20" y="120" width="280" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="re-enter password" minimumFontSize="17" id="She-QX-kmW">
+                                <rect key="frame" x="20" y="226" width="280" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="e-mail (optional)" textAlignment="center" minimumFontSize="17" id="ZkR-qE-7Vk">
+                                <rect key="frame" x="20" y="298" width="284" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kdy-jD-1CA">
+                                <rect key="frame" x="74" y="369" width="172" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Start Engine!" backgroundImage="startEngineButton.png">
+                                    <color key="titleColor" red="0.055086096940000003" green="0.055086096940000003" blue="0.055086096940000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitLogIn:" destination="uii-9Z-tNW" eventType="touchUpInside" id="QFV-lc-vni"/>
+                                    <action selector="submitSignUp:" destination="psX-Ua-XFn" eventType="touchUpInside" id="eKV-QX-xsS"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="password" minimumFontSize="17" id="aHK-DM-d3v">
+                                <rect key="frame" x="20" y="173" width="280" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                            </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="I1f-KC-9qF">
+                                <rect key="frame" x="132" y="205" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="color" red="1" green="0.79210047250000004" blue="0.40912354499999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.79210047250000004" blue="0.40912354499999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SMG-LM-284"/>
+                    <connections>
+                        <outlet property="emailTxt" destination="ZkR-qE-7Vk" id="KI3-fr-OCU"/>
+                        <outlet property="passwordTxt" destination="aHK-DM-d3v" id="IB2-4Q-dsH"/>
+                        <outlet property="repasswordTxt" destination="She-QX-kmW" id="zla-ut-Q7S"/>
+                        <outlet property="usernameTxt" destination="pOE-Gn-uQl" id="CLR-y1-oZe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="95P-CD-3BE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-788" y="-1971"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cyt-Hg-hfy">
+            <objects>
+                <navigationController id="0G1-J7-o35" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J62-Ba-t5Q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="psX-Ua-XFn" kind="relationship" relationship="rootViewController" id="vsz-XN-bMu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OrK-IS-AIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1199" y="-1978"/>
+        </scene>
+        <!--Sidebar-->
         <scene sceneID="zeX-i2-Kfa">
             <objects>
                 <tableViewController storyboardIdentifier="SidebarController" title="Sidebar" id="ghA-YY-jzD" customClass="ATSideBarViewController" sceneMemberID="viewController">
@@ -696,10 +789,10 @@
             </objects>
             <point key="canvasLocation" x="-2744" y="1928"/>
         </scene>
-        <!--Generate Image Controller - Title-->
+        <!--Title-->
         <scene sceneID="3eh-Id-y58">
             <objects>
-                <viewController id="ey3-UL-qLT" customClass="GenerateImageController" sceneMemberID="viewController">
+                <viewController id="ey3-UL-qLT" customClass="ATGenerateImageController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ho5-GD-xo0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -720,7 +813,7 @@
                                     <action selector="segmentChangedValue:" destination="ey3-UL-qLT" eventType="valueChanged" id="HfO-ua-zRa"/>
                                 </connections>
                             </segmentedControl>
-                            <toolbar hidden="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="pEJ-fo-vUy">
+                            <toolbar hidden="YES" clearsContextBeforeDrawing="NO" tag="3" contentMode="scaleToFill" id="pEJ-fo-vUy">
                                 <rect key="frame" x="0.0" y="65" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -740,7 +833,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Camera" image="UIBarButtonCamera.png" id="PsQ-Pt-Zpd"/>
+                    <tabBarItem key="tabBarItem" tag="2" enabled="NO" title="" id="PsQ-Pt-Zpd"/>
                     <navigationItem key="navigationItem" title="Title" id="LKs-rP-gTA">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="oo7-FH-5UM"/>
                     </navigationItem>
@@ -756,7 +849,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kg-Fv-tiq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1168" y="2016"/>
+            <point key="canvasLocation" x="-1360" y="2400"/>
         </scene>
         <!--Publish Event-->
         <scene sceneID="Is6-Pp-wPd">
@@ -825,11 +918,12 @@
                         <outlet property="imageView" destination="l7O-BF-fRn" id="tm2-su-rhP"/>
                         <outlet property="messaeTxtField" destination="zXh-DF-SSy" id="DXq-Y3-g44"/>
                         <outlet property="scrollView" destination="GKC-3w-1Hu" id="f7f-Cp-UhY"/>
+                        <segue destination="ey3-UL-qLT" kind="push" identifier="backToNewsFeed" id="VYA-Zc-yNK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oyI-Ck-SqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-619" y="2016"/>
+            <point key="canvasLocation" x="-739" y="2276"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="RS9-cI-E7F">
@@ -853,16 +947,16 @@
             </objects>
             <point key="canvasLocation" x="-2014" y="1616"/>
         </scene>
-        <!--Table View Events Controller - Root View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="U9C-uq-6ck">
             <objects>
-                <tableViewController id="9BU-W9-YdA" customClass="ATTableViewEventsController" sceneMemberID="viewController">
+                <tableViewController id="9BU-W9-YdA" customClass="ATNewsFeedController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fSP-cF-3Z4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8v9-Y0-VZ1">
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8v9-Y0-VZ1">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8v9-Y0-VZ1" id="Vnu-l2-870">
@@ -882,11 +976,12 @@
             </objects>
             <point key="canvasLocation" x="-632" y="1292"/>
         </scene>
-        <!--Navigation Controller - News Feed-->
+        <!--News Feed-->
         <scene sceneID="iFp-95-MIa">
             <objects>
                 <navigationController definesPresentationContext="YES" id="uTQ-JE-xm6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1" title="News Feed" image="bookmark_feed.png" id="gAj-qR-pfL"/>
+                    <navigationItem key="navigationItem" id="eyb-fy-BoE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lux-9e-Mji">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -999,6 +1094,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="VYA-Zc-yNK"/>
         <segue reference="y4y-9T-ipt"/>
     </inferredMetricsTieBreakers>
 </document>

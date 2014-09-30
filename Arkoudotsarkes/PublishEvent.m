@@ -1,7 +1,7 @@
 
 #import "PublishEvent.h"
 #import "MBProgressHub.h"
-#import "GenerateImageController.h"
+#import "ATGenerateImageController.h"
 #import <Social/Social.h>
 #import <Parse/Parse.h>
 
@@ -16,7 +16,7 @@
 @synthesize myValue;
 @synthesize imageTemp;
 
-GenerateImageController *viewA;
+ATGenerateImageController *viewA;
 UIBarButtonItem *facebookBtn;
 UIBarButtonItem *twitterBtn;
 UIBarButtonItem *databaseBtn;
@@ -41,8 +41,10 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     twitterBtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"twitter.png"] style:UIBarButtonItemStylePlain target:self action:@selector(twitterPost)];
     databaseBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(databasePost)];
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:databaseBtn,twitterBtn,facebookBtn, nil];
+
     imageView.layer.cornerRadius = 10;
     imageView.clipsToBounds = YES;
+    
 }
 
 - (void)viewDidLoad {
@@ -51,7 +53,6 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     scrollView.delegate = self;
     
 }
-
 
 -(void)facebookPost {
     
@@ -114,9 +115,10 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    
     [super viewWillDisappear:animated];
-    
+    NSLog(@"vgainw");
+    ATGenerateImageController *generatedImage = [[ATGenerateImageController alloc]init];
+    //>?????????????????????????????
     // unregister for keyboard notifications
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
     
@@ -191,5 +193,17 @@ replacementText:(NSString *)text {
     return YES;
 }
 
+
+//#pragma mark - Segue
+//
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+// 
+//    if ([segue.identifier isEqualToString:@"backToNewsFeed"]) {
+//        
+//        ATGenerateImageController *generatedImage = (ATGenerateImageController *)segue.destinationViewController;
+//        generatedImage.imageView = nil;
+//    }
+//    
+//}
 
 @end
