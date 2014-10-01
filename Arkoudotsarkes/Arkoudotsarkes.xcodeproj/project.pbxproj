@@ -77,6 +77,7 @@
 		45462C5619CB701100F76198 /* exampleGif2.png in Resources */ = {isa = PBXBuildFile; fileRef = 45462C5519CB701100F76198 /* exampleGif2.png */; };
 		45462C5819CB722100F76198 /* exampleGif2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 45462C5719CB722100F76198 /* exampleGif2.gif */; };
 		45462C5E19CB846600F76198 /* ATTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45462C5D19CB846600F76198 /* ATTabBarViewController.m */; };
+		4549CB6D19DB3E1300A9C92F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4549CB6C19DB3E1300A9C92F /* CoreLocation.framework */; };
 		454DA93319D95D81002FE2A7 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 454DA92E19D95D81002FE2A7 /* Default-Landscape.png */; };
 		454DA93419D95D81002FE2A7 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 454DA92F19D95D81002FE2A7 /* Default-Landscape@2x.png */; };
 		454DA93519D95D81002FE2A7 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 454DA93019D95D81002FE2A7 /* Default-Portrait.png */; };
@@ -127,6 +128,7 @@
 		458FB95519C9992400E50BB3 /* backGroundDesert2.png in Resources */ = {isa = PBXBuildFile; fileRef = 458FB95419C9992400E50BB3 /* backGroundDesert2.png */; };
 		458FB95719C9B61300E50BB3 /* UIBarButtonCamera_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 458FB95619C9B61300E50BB3 /* UIBarButtonCamera_2x.png */; };
 		458FB95919C9B6D200E50BB3 /* UIBarButtonCamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 458FB95819C9B6D200E50BB3 /* UIBarButtonCamera.png */; };
+		45A8B8C719DADE18000DE3D9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A8B8C619DADE18000DE3D9 /* Reachability.m */; };
 		45A91CE719C8C08100012A3E /* ATContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A91CE619C8C08100012A3E /* ATContactViewController.m */; };
 		45A91CEB19C8C9BC00012A3E /* facebook-icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A91CEA19C8C9BC00012A3E /* facebook-icon2.png */; };
 		45A91CED19C8CC3B00012A3E /* backEx1.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A91CEC19C8CC3B00012A3E /* backEx1.png */; };
@@ -233,6 +235,7 @@
 		45462C5719CB722100F76198 /* exampleGif2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = exampleGif2.gif; sourceTree = "<group>"; };
 		45462C5C19CB846600F76198 /* ATTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATTabBarViewController.h; sourceTree = "<group>"; };
 		45462C5D19CB846600F76198 /* ATTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATTabBarViewController.m; sourceTree = "<group>"; };
+		4549CB6C19DB3E1300A9C92F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		454DA92E19D95D81002FE2A7 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
 		454DA92F19D95D81002FE2A7 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
 		454DA93019D95D81002FE2A7 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
@@ -292,6 +295,8 @@
 		458FB95419C9992400E50BB3 /* backGroundDesert2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backGroundDesert2.png; sourceTree = "<group>"; };
 		458FB95619C9B61300E50BB3 /* UIBarButtonCamera_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIBarButtonCamera_2x.png; sourceTree = "<group>"; };
 		458FB95819C9B6D200E50BB3 /* UIBarButtonCamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIBarButtonCamera.png; sourceTree = "<group>"; };
+		45A8B8C519DADE03000DE3D9 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		45A8B8C619DADE18000DE3D9 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		45A91CE519C8C08100012A3E /* ATContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATContactViewController.h; sourceTree = "<group>"; };
 		45A91CE619C8C08100012A3E /* ATContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATContactViewController.m; sourceTree = "<group>"; };
 		45A91CEA19C8C9BC00012A3E /* facebook-icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-icon2.png"; sourceTree = "<group>"; };
@@ -307,6 +312,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4549CB6D19DB3E1300A9C92F /* CoreLocation.framework in Frameworks */,
 				4535939B19D05299007E8E8B /* libz.dylib in Frameworks */,
 				4517A39919CB0C17002BEB36 /* Social.framework in Frameworks */,
 				4582DB9E19C30F2400268017 /* MapKit.framework in Frameworks */,
@@ -452,6 +458,8 @@
 		4572D1BC19BFB241004165F4 = {
 			isa = PBXGroup;
 			children = (
+				45A8B8C519DADE03000DE3D9 /* Reachability.h */,
+				45A8B8C619DADE18000DE3D9 /* Reachability.m */,
 				4574B05A19C38CF00070D755 /* Controllers */,
 				4574B05919C38CCC0070D755 /* Nibs */,
 				4582DB9919C2ED2800268017 /* MBProgressHub */,
@@ -477,6 +485,7 @@
 		4572D1C719BFB241004165F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4549CB6C19DB3E1300A9C92F /* CoreLocation.framework */,
 				4535939A19D05299007E8E8B /* libz.dylib */,
 				4535939019D050FF007E8E8B /* TestFlightSDK3 */,
 				4517A39819CB0C17002BEB36 /* Social.framework */,
@@ -801,6 +810,7 @@
 				4523E1A619C0397C0056A548 /* ATPhotoViewController.m in Sources */,
 				4572D1D519BFB241004165F4 /* main.m in Sources */,
 				45B47CEB19CA356C0071CCF9 /* PublishEvent.m in Sources */,
+				45A8B8C719DADE18000DE3D9 /* Reachability.m in Sources */,
 				4544D17519C0C23000C9B40A /* Comms.m in Sources */,
 				4572D1E219BFB241004165F4 /* ATViewController.m in Sources */,
 				4523E1A319C0390C0056A548 /* ATSideBarViewController.m in Sources */,

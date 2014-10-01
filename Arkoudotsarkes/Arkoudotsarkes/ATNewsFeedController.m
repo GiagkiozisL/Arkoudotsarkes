@@ -14,7 +14,7 @@ ATViewEventCell *tableViewCell;
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"News Feed" image:[UIImage imageNamed:@"UIBarButtonCamera.png"] tag:1];
+//        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"News Feed" image:[UIImage imageNamed:@"UIBarButtonCamera.png"] tag:1];
     }
     return self;
 }

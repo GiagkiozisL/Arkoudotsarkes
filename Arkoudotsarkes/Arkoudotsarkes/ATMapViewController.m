@@ -1,14 +1,21 @@
 
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+
 #import "ATMapViewController.h"
 #import "SWRevealViewController.h"
 #import <MapKit/MapKit.h>
+#import "Reachability.h"
 
-@interface ATMapViewController () <MKMapViewDelegate>
+@interface ATMapViewController () <MKMapViewDelegate,CLLocationManagerDelegate>
+
+@property (nonatomic, strong) NSMutableArray *locations;
 
 @end
 
 @implementation ATMapViewController
 @synthesize mapView;
+CLLocationManager *locationManager;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -19,8 +26,7 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     // Change button color
@@ -32,32 +38,128 @@
     
     mapView.delegate = self;
     self.navigationItem.title = @"Map";
-    self.mapView.showsUserLocation = YES;
-    self.mapView.mapType = MKMapTypeSatellite;
+    mapView.showsUserLocation = YES;
+    mapView.mapType = MKMapTypeSatellite;
+    self.locations = [[NSMutableArray alloc]init];
+    locationManager = [[CLLocationManager alloc]init];
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.delegate = self;
+    
+    [self getLocation];
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
 }
 
-- (void)didReceiveMemoryWarning
-{
+-(void)getLocation {
+  //  [self checkForWIFIConnection];
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    if(IS_OS_8_OR_LATER) {
+        [locationManager requestWhenInUseAuthorization];
+        [locationManager requestAlwaysAuthorization];
+    }
+    [locationManager startUpdatingLocation];
+}
+
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - MKMapViewDelegate
 
-- (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
-    MKCoordinateRegion region;
-    MKCoordinateSpan span;
-    span.latitudeDelta = 0.025;
-    span.longitudeDelta = 0.025;
-    CLLocationCoordinate2D location;
-    location.latitude = aUserLocation.coordinate.latitude;
-    location.longitude = aUserLocation.coordinate.longitude;
-    region.span = span;
-    region.center = location;
-    [aMapView setRegion:region animated:YES];
+//- (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
+//    MKCoordinateRegion region;
+//    MKCoordinateSpan span;
+//    span.latitudeDelta = 0.025;
+//    span.longitudeDelta = 0.025;
+//    CLLocationCoordinate2D location;
+//    location.latitude = aUserLocation.coordinate.latitude;
+//    location.longitude = aUserLocation.coordinate.longitude;
+//    region.span = span;
+//    region.center = location;
+//    [aMapView setRegion:region animated:YES];
+//}
+
+-(void)locationManager:(CLLocationManager *)manager
+   didUpdateToLocation:(CLLocation *)newLocation
+          fromLocation:(CLLocation *)oldLocation {
+    
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
+    annotation.coordinate = newLocation.coordinate;
+    [self.mapView addAnnotation:annotation];
+    [self.locations addObject:annotation];
+    
+    while (self.locations.count >100) {
+        annotation = [self.locations objectAtIndex:0];
+        [self.locations removeObjectAtIndex:0];
+        [mapView removeAnnotation:annotation];
+    }
+    if (UIApplication.sharedApplication.applicationState == UIApplicationStateActive)
+    {
+        // determine the region the points span so we can update our map's zoom.
+        double maxLat = -91;
+        double minLat =  91;
+        double maxLon = -181;
+        double minLon =  181;
+        
+        for (MKPointAnnotation *annotation in self.locations)
+        {
+            CLLocationCoordinate2D coordinate = annotation.coordinate;
+            
+            if (coordinate.latitude > maxLat)
+                maxLat = coordinate.latitude;
+            if (coordinate.latitude < minLat)
+                minLat = coordinate.latitude;
+            
+            if (coordinate.longitude > maxLon)
+                maxLon = coordinate.longitude;
+            if (coordinate.longitude < minLon)
+                minLon = coordinate.longitude;
+        }
+        
+        MKCoordinateRegion region;
+        region.span.latitudeDelta  = (maxLat +  90) - (minLat +  90);
+        region.span.longitudeDelta = (maxLon + 180) - (minLon + 180);
+        
+        // the center point is the average of the max and mins
+        region.center.latitude  = minLat + region.span.latitudeDelta / 2;
+        region.center.longitude = minLon + region.span.longitudeDelta / 2;
+        
+        // Set the region of the map.
+        [mapView setRegion:region animated:YES];
+    }
+    else
+    {
+        NSLog(@"App is backgrounded. New location is %@", newLocation);
+    }
+
+    
+    
+}
+
+- (IBAction)accurancyChanged:(id)sender {
+    
+    const CLLocationAccuracy accurancyValues [] = {
+        kCLLocationAccuracyBestForNavigation,
+        kCLLocationAccuracyBest,
+        kCLLocationAccuracyNearestTenMeters,
+        kCLLocationAccuracyHundredMeters,
+        kCLLocationAccuracyKilometer,
+        kCLLocationAccuracyThreeKilometers
+    };
+    locationManager.desiredAccuracy = accurancyValues[self.segmentAccurancy.selectedSegmentIndex];
+    
+}
+
+- (IBAction)enabledStateChanged:(id)sender {
+    
+    if (self.switchEnabled.on) {
+        [locationManager startUpdatingLocation];
+    } else
+        [locationManager stopUpdatingLocation];
+    
 }
 
 @end
