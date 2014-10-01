@@ -14,8 +14,12 @@
 
 @implementation ATMapViewController
 @synthesize mapView;
-CLLocationManager *locationManager;
+@synthesize label;
+@synthesize resetBtn;
 
+CLLocationManager *locationManager;
+NSTimeInterval elapseTime;
+NSTimeInterval currentTime;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,11 +32,11 @@ CLLocationManager *locationManager;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    label.text = @"0:00:0";
+    running = false;
+    resetBtn.enabled = NO;
     
-    // Change button color
     _sidebarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
-    
-    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
     
@@ -65,6 +69,24 @@ CLLocationManager *locationManager;
     
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)updateTime {
+    
+    if (running == false)  return;
+    
+    currentTime =  [NSDate timeIntervalSinceReferenceDate];
+    elapseTime = currentTime - startTime;
+    
+    int mins = (int) (elapseTime / 60.0);
+    elapseTime -= mins * 60;
+    int secs = (int) (elapseTime);
+    elapseTime -= secs;
+    int fraction = elapseTime * 10.0;
+    
+    label.text = [NSString stringWithFormat:@"%u:%02u.%u",mins,secs,fraction];
+
+    [self performSelector:@selector(updateTime) withObject:self afterDelay:0.1];
 }
 
 #pragma mark - MKMapViewDelegate
@@ -134,8 +156,6 @@ CLLocationManager *locationManager;
     {
         NSLog(@"App is backgrounded. New location is %@", newLocation);
     }
-
-    
     
 }
 
@@ -156,10 +176,16 @@ CLLocationManager *locationManager;
 - (IBAction)enabledStateChanged:(id)sender {
     
     if (self.switchEnabled.on) {
+        running = true;
+        startTime = [NSDate timeIntervalSinceReferenceDate];
+        resetBtn.enabled = YES;
+        [self updateTime];
         [locationManager startUpdatingLocation];
-    } else
+    } else  {
+        
+    running = false;
         [locationManager stopUpdatingLocation];
-    
+    }
 }
 
 @end
