@@ -7,10 +7,10 @@
 #import "Reachability.h"
 #import "CustomAnnotationView.h"
 
-@interface ATMapViewController () <MKMapViewDelegate,CLLocationManagerDelegate>
+@interface ATMapViewController () <MKMapViewDelegate,CLLocationManagerDelegate,MKAnnotation>
 
 @property (nonatomic, strong) NSMutableArray *locations;
-
+@property (readwrite,nonatomic) CLLocationCoordinate2D coordinate;
 @end
 
 @implementation ATMapViewController
@@ -50,7 +50,6 @@ NSTimeInterval currentTime;
     mapView.mapType = MKMapTypeSatellite;
     self.locations = [[NSMutableArray alloc]init];
     locationManager = [[CLLocationManager alloc]init];
-//    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     locationManager.delegate = self;
     
     [self getLocation];
@@ -93,9 +92,9 @@ NSTimeInterval currentTime;
     [self performSelector:@selector(updateTime) withObject:self afterDelay:0.1];
 }
 
--(void)locationManager:(CLLocationManager *)manager
-   didUpdateToLocation:(CLLocation *)newLocation
-          fromLocation:(CLLocation *)oldLocation {
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+    CLLocation *newLocation = locations.lastObject;
     
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
     annotation.coordinate = newLocation.coordinate;
@@ -103,7 +102,7 @@ NSTimeInterval currentTime;
     [self.mapView addAnnotation:annotation];
     [self.locations addObject:annotation];
     
-    while (self.locations.count >100) {
+    while (self.locations.count >1000) {
         annotation = [self.locations objectAtIndex:0];
         [self.locations removeObjectAtIndex:0];
         [mapView removeAnnotation:annotation];
@@ -142,11 +141,20 @@ NSTimeInterval currentTime;
         // Set the region of the map.
         [mapView setRegion:region animated:YES];
     }
-    else
-    {
+    else {
         NSLog(@"App is backgrounded. New location is %@", newLocation);
     }
+
     
+}
+
+#pragma mark -MKAnnotationView
+
+-(MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    MKPinAnnotationView *MyPin=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"current"];
+    MyPin.pinColor = MKPinAnnotationColorPurple;
+    
+    return MyPin;
 }
 
 - (IBAction)accurancyChanged:(id)sender {
@@ -160,7 +168,6 @@ NSTimeInterval currentTime;
         kCLLocationAccuracyThreeKilometers
     };
     locationManager.desiredAccuracy = accurancyValues[self.segmentAccurancy.selectedSegmentIndex];
-    
 }
 
 - (IBAction)enabledStateChanged:(id)sender {

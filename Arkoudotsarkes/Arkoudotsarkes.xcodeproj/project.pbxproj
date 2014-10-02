@@ -85,6 +85,9 @@
 		454DA93719D95D81002FE2A7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 454DA93219D95D81002FE2A7 /* Default@2x.png */; };
 		454DA93A19D9621A002FE2A7 /* ATSignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454DA93919D9621A002FE2A7 /* ATSignUpController.m */; };
 		455E3F1319DD315B00730324 /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 455E3F1219DD315B00730324 /* CustomAnnotationView.m */; };
+		455E3F1519DD4A8100730324 /* pinExample.png in Resources */ = {isa = PBXBuildFile; fileRef = 455E3F1419DD4A8100730324 /* pinExample.png */; };
+		455E3F1719DD4AD400730324 /* pinExample2.png in Resources */ = {isa = PBXBuildFile; fileRef = 455E3F1619DD4AD400730324 /* pinExample2.png */; };
+		455E3F1919DD4D3900730324 /* pin3.png in Resources */ = {isa = PBXBuildFile; fileRef = 455E3F1819DD4D3900730324 /* pin3.png */; };
 		456B4D9519C0937200B8E5FB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456B4D9219C0937100B8E5FB /* Bolts.framework */; };
 		456B4D9619C0937200B8E5FB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456B4D9319C0937100B8E5FB /* Parse.framework */; };
 		456B4D9719C0937200B8E5FB /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456B4D9419C0937100B8E5FB /* ParseFacebookUtils.framework */; };
@@ -246,6 +249,9 @@
 		454DA93919D9621A002FE2A7 /* ATSignUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSignUpController.m; sourceTree = "<group>"; };
 		455E3F1119DD315B00730324 /* CustomAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotationView.h; sourceTree = "<group>"; };
 		455E3F1219DD315B00730324 /* CustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationView.m; sourceTree = "<group>"; };
+		455E3F1419DD4A8100730324 /* pinExample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinExample.png; sourceTree = "<group>"; };
+		455E3F1619DD4AD400730324 /* pinExample2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinExample2.png; sourceTree = "<group>"; };
+		455E3F1819DD4D3900730324 /* pin3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin3.png; sourceTree = "<group>"; };
 		456B4D9219C0937100B8E5FB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		456B4D9319C0937100B8E5FB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		456B4D9419C0937100B8E5FB /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -370,6 +376,9 @@
 		4523E1A719C03B0F0056A548 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				455E3F1819DD4D3900730324 /* pin3.png */,
+				455E3F1619DD4AD400730324 /* pinExample2.png */,
+				455E3F1419DD4A8100730324 /* pinExample.png */,
 				4576533F19DA99E20044A887 /* BackSettings.png */,
 				4576533B19DA97AE0044A887 /* engineStarted.png */,
 				4576533C19DA97AF0044A887 /* engineStopped.png */,
@@ -731,6 +740,7 @@
 				4523E1C319C03B1B0056A548 /* map.png in Resources */,
 				45462C5619CB701100F76198 /* exampleGif2.png in Resources */,
 				4523E19019C033FF0056A548 /* comments_photo.jpg in Resources */,
+				455E3F1919DD4D3900730324 /* pin3.png in Resources */,
 				4523E1CC19C050CE0056A548 /* logIn.png in Resources */,
 				4582DB9419C2DF5000268017 /* appIcon80.png in Resources */,
 				458FB95119C984B400E50BB3 /* backGroundDesert.png in Resources */,
@@ -745,6 +755,7 @@
 				4523E18F19C033FF0056A548 /* calendar.png in Resources */,
 				4523E19819C033FF0056A548 /* tag.png in Resources */,
 				4523E1BA19C03B1B0056A548 /* tag_photo.jpg in Resources */,
+				455E3F1719DD4AD400730324 /* pinExample2.png in Resources */,
 				45A91CED19C8CC3B00012A3E /* backEx1.png in Resources */,
 				4523E18C19C033FF0056A548 /* bookmark_photo.jpg in Resources */,
 				4523E19219C033FF0056A548 /* map.png in Resources */,
@@ -766,6 +777,7 @@
 				4519CB8319C211DF002007C7 /* addPic.png in Resources */,
 				4535939819D050FF007E8E8B /* README.md in Resources */,
 				4535939919D050FF007E8E8B /* release_notes.md in Resources */,
+				455E3F1519DD4A8100730324 /* pinExample.png in Resources */,
 				45462C4819CB3EC200F76198 /* newsFeed.png in Resources */,
 				4572D1E419BFB241004165F4 /* Images.xcassets in Resources */,
 				4523E19319C033FF0056A548 /* menu.png in Resources */,
