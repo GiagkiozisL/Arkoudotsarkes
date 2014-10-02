@@ -84,6 +84,7 @@
 		454DA93619D95D81002FE2A7 /* Default-Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 454DA93119D95D81002FE2A7 /* Default-Portrait@2x.png */; };
 		454DA93719D95D81002FE2A7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 454DA93219D95D81002FE2A7 /* Default@2x.png */; };
 		454DA93A19D9621A002FE2A7 /* ATSignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454DA93919D9621A002FE2A7 /* ATSignUpController.m */; };
+		455E3F1319DD315B00730324 /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 455E3F1219DD315B00730324 /* CustomAnnotationView.m */; };
 		456B4D9519C0937200B8E5FB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456B4D9219C0937100B8E5FB /* Bolts.framework */; };
 		456B4D9619C0937200B8E5FB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456B4D9319C0937100B8E5FB /* Parse.framework */; };
 		456B4D9719C0937200B8E5FB /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456B4D9419C0937100B8E5FB /* ParseFacebookUtils.framework */; };
@@ -243,6 +244,8 @@
 		454DA93219D95D81002FE2A7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		454DA93819D9621A002FE2A7 /* ATSignUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSignUpController.h; sourceTree = "<group>"; };
 		454DA93919D9621A002FE2A7 /* ATSignUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSignUpController.m; sourceTree = "<group>"; };
+		455E3F1119DD315B00730324 /* CustomAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotationView.h; sourceTree = "<group>"; };
+		455E3F1219DD315B00730324 /* CustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationView.m; sourceTree = "<group>"; };
 		456B4D9219C0937100B8E5FB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		456B4D9319C0937100B8E5FB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		456B4D9419C0937100B8E5FB /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -449,8 +452,12 @@
 		4544D17219C0C21500C9B40A /* NSObjects */ = {
 			isa = PBXGroup;
 			children = (
+				45A8B8C519DADE03000DE3D9 /* Reachability.h */,
+				45A8B8C619DADE18000DE3D9 /* Reachability.m */,
 				4544D17319C0C23000C9B40A /* Comms.h */,
 				4544D17419C0C23000C9B40A /* Comms.m */,
+				455E3F1119DD315B00730324 /* CustomAnnotationView.h */,
+				455E3F1219DD315B00730324 /* CustomAnnotationView.m */,
 			);
 			name = NSObjects;
 			sourceTree = "<group>";
@@ -458,8 +465,6 @@
 		4572D1BC19BFB241004165F4 = {
 			isa = PBXGroup;
 			children = (
-				45A8B8C519DADE03000DE3D9 /* Reachability.h */,
-				45A8B8C619DADE18000DE3D9 /* Reachability.m */,
 				4574B05A19C38CF00070D755 /* Controllers */,
 				4574B05919C38CCC0070D755 /* Nibs */,
 				4582DB9919C2ED2800268017 /* MBProgressHub */,
@@ -802,6 +807,7 @@
 			files = (
 				4523E1CA19C043AB0056A548 /* ATLogInViewController.m in Sources */,
 				4582DB9C19C2ED6400268017 /* MBProgressHub.m in Sources */,
+				455E3F1319DD315B00730324 /* CustomAnnotationView.m in Sources */,
 				45462C4E19CB434300F76198 /* ATViewEventCell.m in Sources */,
 				45462C5E19CB846600F76198 /* ATTabBarViewController.m in Sources */,
 				4519CB7C19C20332002007C7 /* ATTeamTableViewController.m in Sources */,

@@ -5,6 +5,7 @@
 #import "SWRevealViewController.h"
 #import <MapKit/MapKit.h>
 #import "Reachability.h"
+#import "CustomAnnotationView.h"
 
 @interface ATMapViewController () <MKMapViewDelegate,CLLocationManagerDelegate>
 
@@ -32,9 +33,12 @@ NSTimeInterval currentTime;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    label.text = @"0:00:0";
+    label.text = @"00:00:0";
     running = false;
-    resetBtn.enabled = NO;
+    resetBtn.enabled = YES;
+    resetBtn.hidden = YES;
+    resetBtn.layer.cornerRadius = 10.0;
+    resetBtn.clipsToBounds = YES;
     
     _sidebarButton.tintColor = [UIColor colorWithWhite:0.1f alpha:0.9f];
     _sidebarButton.target = self.revealViewController;
@@ -46,7 +50,7 @@ NSTimeInterval currentTime;
     mapView.mapType = MKMapTypeSatellite;
     self.locations = [[NSMutableArray alloc]init];
     locationManager = [[CLLocationManager alloc]init];
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+//    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     locationManager.delegate = self;
     
     [self getLocation];
@@ -84,25 +88,10 @@ NSTimeInterval currentTime;
     elapseTime -= secs;
     int fraction = elapseTime * 10.0;
     
-    label.text = [NSString stringWithFormat:@"%u:%02u.%u",mins,secs,fraction];
+    label.text = [NSString stringWithFormat:@"%02u:%02u.%u",mins,secs,fraction];
 
     [self performSelector:@selector(updateTime) withObject:self afterDelay:0.1];
 }
-
-#pragma mark - MKMapViewDelegate
-
-//- (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
-//    MKCoordinateRegion region;
-//    MKCoordinateSpan span;
-//    span.latitudeDelta = 0.025;
-//    span.longitudeDelta = 0.025;
-//    CLLocationCoordinate2D location;
-//    location.latitude = aUserLocation.coordinate.latitude;
-//    location.longitude = aUserLocation.coordinate.longitude;
-//    region.span = span;
-//    region.center = location;
-//    [aMapView setRegion:region animated:YES];
-//}
 
 -(void)locationManager:(CLLocationManager *)manager
    didUpdateToLocation:(CLLocation *)newLocation
@@ -110,6 +99,7 @@ NSTimeInterval currentTime;
     
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
     annotation.coordinate = newLocation.coordinate;
+    
     [self.mapView addAnnotation:annotation];
     [self.locations addObject:annotation];
     
@@ -142,12 +132,12 @@ NSTimeInterval currentTime;
         }
         
         MKCoordinateRegion region;
-        region.span.latitudeDelta  = (maxLat +  90) - (minLat +  90);
-        region.span.longitudeDelta = (maxLon + 180) - (minLon + 180);
+        region.span.latitudeDelta = 0.01;
+        region.span.longitudeDelta = 0.01;
         
         // the center point is the average of the max and mins
-        region.center.latitude  = minLat + region.span.latitudeDelta / 2;
-        region.center.longitude = minLon + region.span.longitudeDelta / 2;
+        region.center.latitude  = newLocation.coordinate.latitude;
+        region.center.longitude = newLocation.coordinate.longitude;
         
         // Set the region of the map.
         [mapView setRegion:region animated:YES];
@@ -176,16 +166,29 @@ NSTimeInterval currentTime;
 - (IBAction)enabledStateChanged:(id)sender {
     
     if (self.switchEnabled.on) {
+        
         running = true;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         startTime = [NSDate timeIntervalSinceReferenceDate];
-        resetBtn.enabled = YES;
+        resetBtn.enabled = NO;
+        resetBtn.hidden = YES;
         [self updateTime];
         [locationManager startUpdatingLocation];
     } else  {
         
     running = false;
+        resetBtn.hidden = NO;
+        resetBtn.enabled = YES;
+        
         [locationManager stopUpdatingLocation];
     }
+}
+
+- (IBAction)resetStopWatch:(id)sender {
+
+    [mapView removeAnnotations:_locations];
+    [self viewDidLoad];
+    
 }
 
 @end

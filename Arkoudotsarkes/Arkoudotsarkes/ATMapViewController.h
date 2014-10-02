@@ -20,5 +20,6 @@
 
 - (IBAction)accurancyChanged:(id)sender;
 - (IBAction)enabledStateChanged:(id)sender;
+- (IBAction)resetStopWatch:(id)sender;
 
 @end
