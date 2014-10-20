@@ -11,7 +11,6 @@
 }
 
 @property(weak,nonatomic)IBOutlet UIBarButtonItem *sidebarButton;
-
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentAccurancy;
 @property (strong, nonatomic) IBOutlet UISwitch *switchEnabled;

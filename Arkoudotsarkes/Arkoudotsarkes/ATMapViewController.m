@@ -58,13 +58,32 @@ NSTimeInterval currentTime;
 }
 
 -(void)getLocation {
-  //  [self checkForWIFIConnection];
+   [self checkForWIFIConnection];
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     if(IS_OS_8_OR_LATER) {
         [locationManager requestWhenInUseAuthorization];
         [locationManager requestAlwaysAuthorization];
     }
     [locationManager startUpdatingLocation];
+}
+
+-(void)checkForWIFIConnection {
+    Reachability* wifiReach = [Reachability reachabilityForLocalWiFi];
+    Reachability* cellular = [Reachability reachabilityForInternetConnection];
+    NetworkStatus netStatus = [wifiReach currentReachabilityStatus];
+    NetworkStatus netStatus1 = [cellular currentReachabilityStatus];
+    if (netStatus!=ReachableViaWiFi && netStatus1!=ReachableViaWWAN)
+    {
+        
+        NSString *cancelTitle = @"OK";
+        UIAlertView *alertView1 = [[UIAlertView alloc]
+                                   initWithTitle:@"Connection Failed"
+                                   message:@"Please,check your internet connection(WiFi or Cellular)"
+                                   delegate:self
+                                   cancelButtonTitle:cancelTitle
+                                   otherButtonTitles:  nil ];
+        [alertView1 show];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -35,14 +35,12 @@ NSString *temp;
     [cancelBarBtn setAction:@selector(cancelImage)];
     [cancelBarBtn setTarget:self];
     [toolBar setBackgroundColor:[UIColor blackColor]];
-    
 }
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     // Change button color
-    NSLog(@"kai erxomai edv?");
     sideBarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
     sideBarButton.target = self.revealViewController;
     sideBarButton.action = @selector(revealToggle:);
@@ -52,7 +50,6 @@ NSString *temp;
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)proceedImage {

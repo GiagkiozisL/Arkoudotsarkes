@@ -25,7 +25,6 @@ NSString *name;
 UIButton *settingBtn;
 NSData *imageData;
 
-
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
@@ -63,7 +62,6 @@ NSData *imageData;
     
     if ([PFUser currentUser] && ![PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]){
         titleLabel.text = [NSString stringWithFormat:@"%@",[[PFUser currentUser]objectForKey:@"username"]];
-     //   sizeOfString = [titleLabel.text length];
         myImageView = [[UIImageView alloc]init];
         myImageView.image = [UIImage imageNamed:@"pilot"];
 
@@ -103,8 +101,6 @@ NSData *imageData;
         myImageView = [[UIImageView alloc] init];
         myImageView.image = [UIImage imageNamed:@".png"];
     }
-
-    
 }
 
 - (void)viewDidLoad {
@@ -114,13 +110,11 @@ NSData *imageData;
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.opaque = NO;
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backGroundDesert2.png"]];
-    
     menuItems = @[@"title", @"news", @"comments", @"map", @"calendar", @"wishlist", @"bookmark"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -164,9 +158,7 @@ NSData *imageData;
             [navController setViewControllers: @[dvc] animated: NO ];
             [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
         };
-        
     }
-    
 }
 
 -(void)settingsViewController{

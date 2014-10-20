@@ -17,7 +17,6 @@
 UILabel *usernameLabel;
 UIAlertView *alert;
 
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -67,14 +66,11 @@ UIAlertView *alert;
     usernameLabel.font = [UIFont fontWithName:@"Telugu Sangam MN Bold" size:21];
     
     self.navigationItem.title = usernameLabel.text;
-    
-    
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -108,9 +104,7 @@ UIAlertView *alert;
     [PFUser logInWithUsernameInBackground:usernameTxt.text password:passwordTxt.text block:^(PFUser *user, NSError *error) {
         if (!error) {
             NSLog(@"Login user!");
-            
             [self.revealViewController revealToggle:self];
-        
             passwordTxt.text = nil;
         }
         else {

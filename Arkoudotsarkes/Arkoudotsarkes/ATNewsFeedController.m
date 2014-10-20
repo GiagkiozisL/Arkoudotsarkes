@@ -26,7 +26,6 @@ UIAlertView *alertFail;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     sideBarButton.target = self.revealViewController;
     sideBarButton.action = @selector(revealToggle:);
     
@@ -42,7 +41,6 @@ UIAlertView *alertFail;
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)morePressed:(id)sender forEvent:(UIEvent*)event {
@@ -65,7 +63,6 @@ UIAlertView *alertFail;
 
 -(void)refreshView:(UIRefreshControl*)refresh {
              refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data..."];
-    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MMM d, h:mm a"];
     NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@",
@@ -126,7 +123,6 @@ UIAlertView *alertFail;
             break;
     }
     
-    // Close the Mail Interface
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -135,9 +131,8 @@ UIAlertView *alertFail;
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     
     if (buttonIndex == 0) {
-        
         if ([PFUser currentUser] != nil) {
-            
+
             alert =[[UIAlertView alloc] initWithTitle:@"Message"
                                               message:@"Thank you for reporting, we will get in touch with you soon"
                                              delegate:nil
@@ -160,7 +155,6 @@ UIAlertView *alertFail;
             [alertFail show];
             
             [self performSelector:@selector(dismissAlertView) withObject:alertFail afterDelay:3.5];
-       
         }
     }
 }

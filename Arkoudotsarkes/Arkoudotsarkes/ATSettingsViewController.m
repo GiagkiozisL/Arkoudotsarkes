@@ -22,13 +22,10 @@
 -(void)viewWillAppear:(BOOL)animated {
     
     if ([PFUser currentUser])
-//        && // Check if user is cached
-//        [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])
     {
          [stopEngineBtn setImage:[UIImage imageNamed:@"engineStarted.png"] forState:UIControlStateNormal];
     } else
          [stopEngineBtn setImage:[UIImage imageNamed:@"engineStopped.png"] forState:UIControlStateNormal];
-    
 }
 
 - (void)viewDidLoad {
@@ -47,7 +44,6 @@
     [logOutBtn addTarget:self action:@selector(logOutAndDismiss) forControlEvents:UIControlEventTouchUpInside];
     [naviView addSubview:logOutBtn];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:naviView];
-    
 
 }
 

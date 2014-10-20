@@ -31,7 +31,6 @@ UIAlertController *succeedSignUp;
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)backToMain {
@@ -110,38 +109,7 @@ UIAlertController *succeedSignUp;
                     usernameTxt.text = nil;
                 }
             }];
-//        } else {
-//        mismathingPasswords = [UIAlertController alertControllerWithTitle:@"Alert"
-//                                                                                                         message:@"Passwords mismatching!"
-//                                                                                                  preferredStyle:UIAlertControllerStyleAlert];
-//                               
-//                                               UIAlertAction *correctPasswods = [UIAlertAction
-//                                                                                 actionWithTitle:@"Wrong Passwords"
-//                                                                                 style:UIAlertActionStyleDestructive
-//                                                                                 handler:^(UIAlertAction *action)
-//                                                                                 {
-//                               
-//                                                                                 }];
-//                                               [mismathingPasswords addAction:correctPasswods];
-//                                               [self presentViewController:mismathingPasswords animated:YES completion:nil];
-//        }
-//    }
-//    else
-//                alertController = [UIAlertController
-//                                                      alertControllerWithTitle:@"Alert!"
-//                                                      message:@"There are empty fields."
-//                                                      preferredStyle:UIAlertControllerStyleAlert];
-//        
-//                UIAlertAction *enterFields = [UIAlertAction
-//                                              actionWithTitle:@"Try again"
-//                                              style:UIAlertActionStyleDestructive
-//                                              handler:^(UIAlertAction *action)
-//                                              {
-//        
-//                                              }];
-//        
-//            [alertController addAction:enterFields];
-//            [self presentViewController:alertController animated:YES completion:nil];
-//  
-        }}}
+        }
+    }
+}
 @end
