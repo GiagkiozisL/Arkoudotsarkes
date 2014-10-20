@@ -61,6 +61,15 @@ NSData *imageData;
     self.navigationItem.titleView = titleView;
     
     
+    if ([PFUser currentUser] && ![PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]){
+        titleLabel.text = [NSString stringWithFormat:@"%@",[[PFUser currentUser]objectForKey:@"username"]];
+     //   sizeOfString = [titleLabel.text length];
+        myImageView = [[UIImageView alloc]init];
+        myImageView.image = [UIImage imageNamed:@"pilot"];
+
+    }
+    else
+    
     if ([PFUser currentUser] && // Check if user is cached
         [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
         // Check if user is linked to Facebook
@@ -86,14 +95,13 @@ NSData *imageData;
         NSLog(@"user logged in");
         titleLabel.text = name;
         image = [UIImage imageWithData:imageData];
-        myImageView = [[UIImageView alloc] initWithImage:image];
 
     } else {
         
         NSLog(@"user hasnt logged in");
         titleLabel.text = @"user hasnt logged in";
-        image = nil;
         myImageView = [[UIImageView alloc] init];
+        myImageView.image = [UIImage imageNamed:@".png"];
     }
 
     
@@ -107,7 +115,7 @@ NSData *imageData;
     self.tableView.opaque = NO;
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backGroundDesert2.png"]];
     
-    menuItems = @[@"title", @"news", @"comments", @"map", @"calendar", @"wishlist", @"bookmark", @"tag"];
+    menuItems = @[@"title", @"news", @"comments", @"map", @"calendar", @"wishlist", @"bookmark"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -164,13 +172,6 @@ NSData *imageData;
 -(void)settingsViewController{
     
     [self performSegueWithIdentifier:@"settingsSegue" sender:self];
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-//    if (indexPath.row == 2) {
-//        [self performSegueWithIdentifier:@"newsFeed" sender:self];
-//    }
 }
 
 @end

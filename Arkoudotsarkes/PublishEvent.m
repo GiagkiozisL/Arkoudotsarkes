@@ -93,6 +93,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     NSString *filename = [NSString stringWithFormat:@"image.png"];
     PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
     [newObject setObject:imageFile forKey:@"image"];
+    [newObject setObject:[PFUser currentUser] forKey:@"username"];
     
     // Show progress
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -116,12 +117,8 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    NSLog(@"vgainw");
-    ATGenerateImageController *generatedImage = [[ATGenerateImageController alloc]init];
-    
     // unregister for keyboard notifications
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
     
 }

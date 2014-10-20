@@ -5,7 +5,6 @@
 #import "SWRevealViewController.h"
 #import <MapKit/MapKit.h>
 #import "Reachability.h"
-#import "CustomAnnotationView.h"
 
 @interface ATMapViewController () <MKMapViewDelegate,CLLocationManagerDelegate,MKAnnotation>
 
@@ -131,8 +130,8 @@ NSTimeInterval currentTime;
         }
         
         MKCoordinateRegion region;
-        region.span.latitudeDelta = 0.01;
-        region.span.longitudeDelta = 0.01;
+        region.span.latitudeDelta = 0.05;
+        region.span.longitudeDelta = 0.05;
         
         // the center point is the average of the max and mins
         region.center.latitude  = newLocation.coordinate.latitude;
@@ -144,7 +143,6 @@ NSTimeInterval currentTime;
     else {
         NSLog(@"App is backgrounded. New location is %@", newLocation);
     }
-
     
 }
 

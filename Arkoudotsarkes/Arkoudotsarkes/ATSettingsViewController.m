@@ -21,8 +21,9 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     
-    if ([PFUser currentUser] && // Check if user is cached
-        [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])
+    if ([PFUser currentUser])
+//        && // Check if user is cached
+//        [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]])
     {
          [stopEngineBtn setImage:[UIImage imageNamed:@"engineStarted.png"] forState:UIControlStateNormal];
     } else

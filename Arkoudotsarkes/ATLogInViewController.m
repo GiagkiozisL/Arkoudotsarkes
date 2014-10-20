@@ -3,7 +3,7 @@
 #import "SWRevealViewController.h"
 #import "Comms.h"
 
-@interface ATLogInViewController () <CommsDelegate>
+@interface ATLogInViewController () <CommsDelegate,UITextFieldDelegate>
 
 @end
 
@@ -28,15 +28,11 @@ UIAlertView *alert;
 }
 
 - (void) commsDidLogin:(BOOL)loggedIn {
-	// Re-enable the Login button
+	
 	[fbLoginBtn setEnabled:YES];
-    
-	// Stop the activity indicator
 	[logInIndicator stopAnimating];
-    
-	// Did we login successfully ?
 	if (loggedIn) {
-		// Seque to the Image Wall
+	
 		[self dismissViewControllerAnimated:YES completion:nil];
             alert =[[UIAlertView alloc] initWithTitle:@"Message"
                                                        message:@"Success!!"
@@ -49,7 +45,6 @@ UIAlertView *alert;
         [alert addSubview:alertImgView];
         [alert show];
         [self performSelector:@selector(dismissAlertView) withObject:alert afterDelay:2.0];
-        NSLog(@"everything its gonna be alright");
         
 	} else {
 		// Show error alert
@@ -61,8 +56,7 @@ UIAlertView *alert;
 	}
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu.png"] style:UIBarButtonItemStylePlain target:self.revealViewController action:@selector(revealToggle:)];
@@ -89,7 +83,9 @@ UIAlertView *alert;
         [textField resignFirstResponder];
         [passwordTxt becomeFirstResponder];
     } else if (textField == passwordTxt)
-        [self submitLogIn:self];
+    {  [self submitLogIn:self];
+        [textField resignFirstResponder];
+    }
     return YES;
 }
 
@@ -101,22 +97,20 @@ UIAlertView *alert;
 
 - (IBAction)facebookLogIn:(id)sender {
     
-    // Disable the Login button to prevent multiple touches
     [fbLoginBtn setEnabled:NO];
-    
-    // Show an activity indicator
     [logInIndicator startAnimating];
-    
-    // Do the login
     [Comms login:self];
     
 }
 - (IBAction)submitLogIn:(id)sender {
     
+    [logInIndicator startAnimating];
     [PFUser logInWithUsernameInBackground:usernameTxt.text password:passwordTxt.text block:^(PFUser *user, NSError *error) {
         if (!error) {
             NSLog(@"Login user!");
-            [self dismissViewControllerAnimated:YES completion:nil];
+            
+            [self.revealViewController revealToggle:self];
+        
             passwordTxt.text = nil;
         }
         else {
@@ -127,6 +121,7 @@ UIAlertView *alert;
             [usernameTxt becomeFirstResponder];
         }
     }];
+    [logInIndicator stopAnimating];
 }
 
 @end
